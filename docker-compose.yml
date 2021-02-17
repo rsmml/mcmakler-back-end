@@ -20,9 +20,15 @@ services:
 
   database:
     image: postgres:13.1
+    ports:
+      - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_DB: mcmakler_back_end_development
+      POSTGRES_USER: mcmakler_back_end_development
+      POSTGRES_PASSWORD: testm3!
 
   redis:
     image: redis:5.0.7
@@ -44,7 +50,7 @@ services:
       RAILS_ENV: development
     entrypoint: ./entrypoints/sidekiq-entrypoint.sh
 
-  volumes:
-    gem_cache:
-    db_data:
-    node_modules:
+volumes:
+  gem_cache:
+  db_data:
+  node_modules:
