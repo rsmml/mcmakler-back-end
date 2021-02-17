@@ -42,6 +42,17 @@ class Api::V1::PropertiesController < ApplicationController
   end
 
   def property_params
-    params.permit(:address, :size, :construction_year, :rooms, :price, :property_type, :state_property, :user_id, :market)
+    params.permit(
+      :address,
+      :size,
+      :construction_year,
+      :rooms,
+      :price,
+      :property_type,
+      :state_property,
+      :user_id,
+      :market,
+      photos: []
+    )
   end
 end
