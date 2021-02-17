@@ -17,11 +17,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: mcmakler_back_end_development
-  username: mcmakler_back_end_development
-  password: "testm3!"
-  port: 5432
-  host: database
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+  host: <%= ENV['DATABASE_HOST'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
