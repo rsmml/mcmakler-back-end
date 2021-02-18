@@ -9,6 +9,9 @@ puts 'User cleaned'
 
 puts 'Adding Users'
 
+
+new_users = []
+
 5.times do
   user = User.create(
     email: Faker::Internet.email,
@@ -16,6 +19,7 @@ puts 'Adding Users'
     password_confirmation: '123123'
   )
   puts "User #{user.id} was created"
+  new_users << user.id
 end
 
 puts 'Creating new properties:'
@@ -29,7 +33,7 @@ puts 'Creating new properties:'
     price: rand(1200...4000),
     property_type: 'Apartment',
     state_property: ['Premium', 'Normal', 'Simple'].sample,
-    user_id: 1,
+    user_id: new_users.sample,
     market: ['Sell', 'Rent'].sample,
     photo_id: rand(1..11)
   )
