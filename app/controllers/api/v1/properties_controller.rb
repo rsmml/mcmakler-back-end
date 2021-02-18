@@ -19,6 +19,7 @@ class Api::V1::PropertiesController < ApplicationController
 
   def create
     property = Property.new(property_params)
+    property.photo_id = rand(1..11)
     if property.save
       render json: { status: :created, property: property }
     else

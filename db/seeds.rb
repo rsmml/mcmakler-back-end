@@ -1,7 +1,39 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts 'Starting seeds'
+
+puts 'Deleting old Properties'
+Property.delete_all
+puts 'Properties cleaned'
+puts 'Cleaning Users'
+User.delete_all
+puts 'User cleaned'
+
+puts 'Adding Users'
+
+5.times do
+  user = User.create(
+    email: Faker::Internet.email,
+    password: '123123',
+    password_confirmation: '123123'
+  )
+  puts "User #{user.id} was created"
+end
+
+puts 'Creating new properties:'
+
+20.times do
+  property = Property.create(
+    address: Faker::Address.full_address,
+    size: rand(80..200),
+    construction_year: rand(1990..2020),
+    rooms: rand(1..4),
+    price: rand(1200...4000),
+    property_type: 'Apartment',
+    state_property: ['Premium', 'Normal', 'Simple'].sample,
+    user_id: 1,
+    market: ['Sell', 'Rent'].sample,
+    photo_id: rand(1..11)
+  )
+  puts "Property #{property.id} was created"
+end
+
+puts "Everything up to date"
