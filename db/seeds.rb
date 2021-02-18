@@ -9,7 +9,6 @@ puts 'User cleaned'
 
 puts 'Adding Users'
 
-
 new_users = []
 
 5.times do
@@ -24,7 +23,7 @@ end
 
 puts 'Creating new properties:'
 
-20.times do
+100.times do
   property = Property.create(
     address: Faker::Address.full_address,
     size: rand(80..200),
