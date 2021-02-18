@@ -52,7 +52,7 @@ class Api::V1::PropertiesController < ApplicationController
       :state_property,
       :user_id,
       :market,
-      photos: []
+      :photo
     )
   end
 end
