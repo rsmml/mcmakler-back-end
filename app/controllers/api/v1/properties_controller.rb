@@ -11,7 +11,8 @@ class Api::V1::PropertiesController < ApplicationController
   end
 
   def create
-    property = Property.new(property_params)
+    photo = Cloudinary::Uploader.upload(params[:photo])
+    property = Property.new(property_params, photo: photo['url'])
     if property.save
       render json: { status: :created, property: property }
     else
