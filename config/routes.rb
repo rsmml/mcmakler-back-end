@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :properties
+      get :my_properties, to: "properties#my_properties"
     end
   end
 end

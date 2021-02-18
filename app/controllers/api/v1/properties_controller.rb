@@ -1,9 +1,16 @@
 class Api::V1::PropertiesController < ApplicationController
+  include CurrentUserConcern
   before_action :set_property, only: %i[show update destroy]
 
   def index
     properties = Property.all.order(:id)
     render json: { properties: properties }
+  end
+
+  def my_properties
+    user = session[:user_id]
+    properties = Property.where(user_id: user)
+    render json: { properties: properties, user_id: user }
   end
 
   def show
