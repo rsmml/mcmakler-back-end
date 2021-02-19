@@ -23,9 +23,28 @@ end
 
 puts 'Creating new properties:'
 
+cities = [
+  'Berlin',
+  'Hamburg',
+  'Munich',
+  'Essen',
+  'Frankfurt',
+  'Düsseldorf',
+  'Dortmund',
+  'Leipzig',
+  'Weimar',
+  'Dresden',
+  'Cologne',
+  'Bonn',
+  'Mannheim',
+  'Stuttgart',
+  'Bremen',
+  'Kiel'
+]
+
 50.times do
   property = Property.create(
-    address: "#{Faker::Address.street_address},#{Faker::Address.country_by_code(code: 'DE')}",
+    address: "#{Faker::Address.street_address}, #{cities.sample},#{Faker::Address.country_by_code(code: 'DE')}",
     size: rand(80..200),
     construction_year: rand(1990..2020),
     rooms: rand(1..4),
