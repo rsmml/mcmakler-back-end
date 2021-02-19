@@ -23,9 +23,9 @@ end
 
 puts 'Creating new properties:'
 
-100.times do
+50.times do
   property = Property.create(
-    address: Faker::Address.full_address,
+    address: "#{Faker::Address.street_address},#{Faker::Address.country_by_code(code: 'DE')}",
     size: rand(80..200),
     construction_year: rand(1990..2020),
     rooms: rand(1..4),
