@@ -3,7 +3,7 @@
 - [About App](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#about-app)
 - [How to install project locally](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#install-app-locally)
 - [Back-end in Rails API](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#back-end)
-- [Font-end in Vue.js](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#font-end)
+- [Font-end in Vue.js](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#front-end)
 - [Docker](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#docker)
 - [Test](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#testing-app)
 
