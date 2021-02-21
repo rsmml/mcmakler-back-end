@@ -278,7 +278,7 @@ Once the ruby console is open, run
 User.last.email
 ```
 You should get a string value like this: "user@user.com"
-This is the user e-mail for the log-in, its password is: ```123123```
+This is the user e-mail for the log-in, the password is: ```123123```
 Keep it secret 🤫:no_mouth:
 
 
