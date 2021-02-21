@@ -207,7 +207,7 @@ Yeey :tada: now it's time to install the front-end app:
 
 ## Instalation Fron-End App:
 
-** cd to the directory mcmakler-challenge-fe **
+cd to the directory mcmakler-challenge-fe
 ```ruby
 cd mcmakler-challenge-fe
 ```
@@ -267,12 +267,12 @@ that will create 50 new messages with unknowns id.
 In order to know one of the identifiers, we will take the last instances of User created, and from it, we will
 take the id or identifier.
 
-On the console run:
+Go to the terminal, cd to ```mcmakler-challenge-be``` and run:
 
 ```ruby
 rails c
 ```
-Once the irb console is open, run
+Once the ruby console is open, run
 
 ```ruby
 User.last.email
