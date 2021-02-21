@@ -264,8 +264,8 @@ http://localhost:8080
 
 Because when you install the APP there is no DB we have to create one and run the seed.rb file
 that will create 50 new apartments, and 5 new users with unknowns id.
-In order to know one of the identifiers, we will take the last instances of User created, and from it, we will
-take the id or identifier.
+In order to know one of the user email, we will take the last instance of User created, and from it, we will
+take the email.
 
 Go to the terminal, cd to ```mcmakler-challenge-be``` and run:
 
