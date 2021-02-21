@@ -43,8 +43,8 @@
 # Install App Locally
 [↑ Go To Top ↑](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#readme)
 
-**[GitHub Repo Back-end](https://github.com/rsmml/mcmakler-back-end/)**
-**[GitHub Repo Front-end](https://github.com/rsmml/mcmakler-front-end)**
+- **[GitHub Repo Back-end](https://github.com/rsmml/mcmakler-back-end/)**
+- **[GitHub Repo Front-end](https://github.com/rsmml/mcmakler-front-end)**
 
 - Back-end:
 Clone the repo with this command:
