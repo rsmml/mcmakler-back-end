@@ -4,8 +4,6 @@
 - [How to install project locally](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#install-app-locally)
 - [Back-end in Rails API](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#back-end)
 - [Font-end in Vue.js](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#front-end)
-- [Docker](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#docker)
-- [Test](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#testing-app)
 
 # About App:
 [↑ Go To Top ↑](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#readme)
@@ -19,6 +17,9 @@
 
   ```ruby
   bundle install
+  ```
+  ```ruby
+  yarn install
   ```
 
 * Database creation
@@ -35,15 +36,39 @@
 
 * Heroku
 
-  [Spectrm Challenge](https://spectrm-challenge-rsmml.herokuapp.com/api/v1/messages)
+  [McMakler Challenge](https://mcmakler-challenge-rsmml.herokuapp.com/)
+  User: ```kisha@orn-bradtke.net```
+  Pass: ```123123```
 
 # Install App Locally
 [↑ Go To Top ↑](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#readme)
 
-**[GitHub Repo](https://github.com/rsmml/mcmakler-back-end/)**
+**[GitHub Repo Back-end](https://github.com/rsmml/mcmakler-back-end/)**
+**[GitHub Repo Front-end](https://github.com/rsmml/mcmakler-front-end)**
 
-- You can download the app with the following link:
-  - [Get App Here](https://github.com/rsmml/mcmakler-back-end//archive/master.zip)
+- Back-end:
+Clone the repo with this command:
+(Go to a directory where you will like to put this project, like for example ```~ && cd Desktop/``` )
+```ruby
+git clone git@github.com:rsmml/mcmakler-back-end.git mcmakler-challenge-be
+```
+```ruby
+cd mcmakler-challenge-be
+```
+- Front-end:
+Clone the repo with this command:
+(Go to a directory where you will like to put this project, like for example ```~ && cd Desktop/``` )
+```ruby
+git clone git@github.com:rsmml/mcmakler-front-end.git mcmakler-challenge-fe
+```
+```ruby
+cd mcmakler-challenge-fe
+```
+
+
+- You can also download the app with the following link:
+  - [Get Back-end app here](https://github.com/rsmml/mcmakler-back-end/archive/master.zip)
+  - [Get Front-end app here](https://github.com/rsmml/mcmakler-front-end/archive/master.zip)
 
   - Unzip file.
   - Open Terminal.
@@ -130,6 +155,9 @@ This project is built in
   ```ruby
   bundle install
   ```
+  ```ruby
+  yarn install
+  ```
 
 If this doesn't work, you might need to install another tools or software
 that some of the gems require. Follow the messages and install them.
@@ -145,7 +173,7 @@ load schema.rb, and seed the data by running seeds.rb.
   rails db:setup
 ```
 
-Run ```bundle install``` & ```rails db:migrate``` in case there are pending migrations. But I believe
+Run ```bundle install```, ```yarn install``` & ```rails db:migrate``` in case there are pending migrations. But I believe
 it won't be necesary.
 
 
@@ -179,19 +207,19 @@ Yeey :tada: now it's time to install the front-end app:
 
 ## Instalation Fron-End App:
 
-** cd to the directory smart-links-front-end **
+** cd to the directory mcmakler-challenge-fe **
 ```ruby
-cd smart-links-front-end
+cd mcmakler-challenge-fe
 ```
 Assuming that **Vue** and **vue-cli** are installed in your machine run:
 ```ruby
 yarn install
 ```
 If not:
-```javascript
+```ruby
 npm install vue
 ```
-```javascript
+```ruby
 yarn global add @vue/cli
 ```
 and then run
@@ -203,7 +231,7 @@ To run the app:
 yarn dev
 ```
 This should be running in
-```ruby
+```
 http://localhost:8080
 ```
 
@@ -234,24 +262,24 @@ http://localhost:8080
 
 - **Get USER in order to log-in**
 
-  Because when you install the APP there is no DB we have to create one and run the seed.rb file
-  that will create 50 new messages with unknowns id.
-  In order to know one of the identifiers, we will take the last instances of Message created, and from it, we will
-  take the id or identifier.
+Because when you install the APP there is no DB we have to create one and run the seed.rb file
+that will create 50 new messages with unknowns id.
+In order to know one of the identifiers, we will take the last instances of User created, and from it, we will
+take the id or identifier.
 
-  On the console run:
+On the console run:
 
-  ```ruby
-  rails c
-  ```
-  Once the irb console is open, run
+```ruby
+rails c
+```
+Once the irb console is open, run
 
-  ```ruby
-  User.last.email
-  ```
-  You should get a string value like this: "user@user.com"
-  This is the user e-mail for the log-in, its password is: ```123123```
-  Keep it secret 🤫:no_mouth:
+```ruby
+User.last.email
+```
+You should get a string value like this: "user@user.com"
+This is the user e-mail for the log-in, its password is: ```123123```
+Keep it secret 🤫:no_mouth:
 
 
 # FRONT END:
@@ -265,77 +293,3 @@ I used the strategy to store the User id that comes from the API on the localSto
 in order to get it at the moment to do the ```POST``` request that will connect the user
 with the ```Property``` created.
 
-# Docker
-[↑ Go To Top ↑](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#readme)
-
-Once you have the project folder, 'cd' to the directory of the **spectrm-challenge** and run the following commands:
-
-```ruby
-docker-compose up
-```
-This will run the docker-compose.yml file, that will build the App. If there's an error, please run
-
-
-```ruby
-docker-compose down
-```
-```ruby
-docker-compose build
-```
-(If theres a FATAL error from PostgreSQL, run ```brew services stop posgres```, and start again the container)
-
-One last time, run again ```docker-compose up```
-
-This should be fine :ok_hand: Now the app is running in **localhost:3000**
-
-Now we should migrate our DB with:
-
-```ruby
-docker-compose run web rails db:migrate
-```
-```ruby
-docker-compose run web rails db:seed
-```
-
-Done! Now to check that everything works, go to:
-
-[localhost:3000](http://localhost:3000/api/v1/messages)
-
-
-# Testing App
-[↑ Go To Top ↑](https://github.com/rsmml/mcmakler-back-end//blob/master/README.md#readme)
-
-I created a series of test to verify that all messages created are done under the right
-conditions.
-
-**How to test app:**
-On the terminal (in the directory of the project) run:
-- Locally
-```ruby
-rspec
-```
-
-- Docker:
-
-```ruby
-docker-compose run web rspec
-```
-
-You should be able to see 2 types of tests. The first one, **Messages API** will verify
-all the basic CRUD actions.
-- Creating 10 messages and GET all of them with a :success status.
-- Creating 1 message and GET it with a :success status.
-- Creating 1 message with a POST request.
-- Updating 1 message, first Created with a POST request, then updating the same
-message with a PATCH request
-- And finally, deleting 1 message, first Created with a POST request, then deleted that
-same message with a DELETE request.
-
-In the second part **Check Validations**, all validations are tested:
-- A Message instance is created where its UUID should match a REGEX for UUIDs
-- A Message instance is created with different types of characters from all types of languages
-- A Message instance is created with a HTML Tag on its body. It checks that the validation error match with the validation of the model.
-- A Message instance is created with more that 255 characters. It checks that the validation error match with the validation of the model.
-- A Message instance is created with an e-mail and a link and it gets a 200 status.
-- A Message instance is created. Then we GET that message and check that is hast a counter not nil, and that its value is 1 due that it's the first time
-that message is retrieved.
